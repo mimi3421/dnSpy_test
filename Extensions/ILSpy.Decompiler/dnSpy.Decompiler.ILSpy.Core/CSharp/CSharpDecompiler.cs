@@ -430,7 +430,7 @@ namespace dnSpy.Decompiler.ILSpy.Core.CSharp {
 				return true;
 			if (member is MethodDef md && (md.IsGetter || md.IsSetter || md.IsAddOn || md.IsRemoveOn))
 				return true;
-			return !CSharpAstBuilder.MemberIsHidden(member, settings);
+			return !ICSharpCode.Decompiler.CSharp.CSharpDecompiler.MemberIsHidden(member, settings);
 		}
 
 		public override bool ShowMember(IMemberRef member) => ShowMember(member, showAllMembers, langSettings.Settings);

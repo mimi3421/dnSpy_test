@@ -99,7 +99,7 @@ namespace dnSpy.Decompiler.ILSpy.Core.ILAst {
 
 			var bodyInfo = StartKeywordBlock(output, ".body", method);
 
-			var ts = new DecompilerTypeSystem(new PEFile(method.Module), TypeSystemOptions.Default);
+			var ts = new DecompilerTypeSystem(new MetadataFile(method.Module), TypeSystemOptions.Default);
 			var reader = new ILReader(ts.MainModule) { UseDebugSymbols = true, CalculateILSpans = true };
 			var il = reader.ReadIL(method, kind: ILFunctionKind.TopLevelFunction, cancellationToken: ctx.CancellationToken);
 

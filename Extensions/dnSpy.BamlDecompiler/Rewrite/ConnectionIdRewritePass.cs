@@ -64,7 +64,7 @@ namespace dnSpy.BamlDecompiler.Rewrite {
 			var componentConnectorConnect = ctx.Baml.KnownThings.Types(KnownTypes.IComponentConnector).TypeDef.FindMethod("Connect");
 			var styleConnectorConnect = ctx.Baml.KnownThings.Types(KnownTypes.IStyleConnector).TypeDef.FindMethod("Connect");
 
-			var ts = new DecompilerTypeSystem(new PEFile(ctx.Module), TypeSystemOptions.Default);
+			var ts = new DecompilerTypeSystem(new MetadataFile(ctx.Module), TypeSystemOptions.Default);
 
 			var connIds = new Dictionary<long, Action<XamlContext, XElement>>();
 
